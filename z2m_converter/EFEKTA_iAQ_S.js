@@ -28,6 +28,7 @@ const tzLocal = {
 	co2_config: {
         key: ['auto_brightness', 'forced_recalibration', 'factory_reset_co2', 'long_chart_period', 'long_chart_period2', 'manual_forced_recalibration'],
         convertSet: async (entity, key, rawValue, meta) => {
+			const endpoint = meta.device.getEndpoint(1);
             const lookup = {'OFF': 0x00, 'ON': 0x01};
             const value = lookup.hasOwnProperty(rawValue) ? lookup[rawValue] : parseInt(rawValue, 10);
             const payloads = {
@@ -38,7 +39,7 @@ const tzLocal = {
                 long_chart_period2: ['msCO2', {0x0244: {value, type: 0x10}}],
                 manual_forced_recalibration: ['msCO2', {0x0207: {value, type: 0x21}}],
             };
-            await entity.write(payloads[key][0], payloads[key][1]);
+            await endpoint.write(payloads[key][0], payloads[key][1]);
             return {
                 state: {[key]: rawValue},
             };
@@ -47,11 +48,12 @@ const tzLocal = {
 	temperature_config: {
         key: ['temperature_offset'],
         convertSet: async (entity, key, rawValue, meta) => {
+			const endpoint = meta.device.getEndpoint(1);
             const value = parseInt(rawValue, 10)
             const payloads = {
                 temperature_offset: ['msTemperatureMeasurement', {0x0210: {value, type: 0x29}}],
             };
-            await entity.write(payloads[key][0], payloads[key][1]);
+            await endpoint.write(payloads[key][0], payloads[key][1]);
             return {
                 state: {[key]: rawValue},
             };
@@ -60,11 +62,12 @@ const tzLocal = {
 	temperaturef_config: {
         key: ['temperature_offset'],
         convertSet: async (entity, key, rawValue, meta) => {
-            const value = parseFloat(rawValue)*10;
+			const endpoint = meta.device.getEndpoint(1);
+            const value = parseFloat(rawValue)*100;
             const payloads = {
                 temperature_offset: ['msTemperatureMeasurement', {0x0210: {value, type: 0x29}}],
             };
-            await entity.write(payloads[key][0], payloads[key][1]);
+            await endpoint.write(payloads[key][0], payloads[key][1]);
             return {
                 state: {[key]: rawValue},
             };
@@ -73,11 +76,12 @@ const tzLocal = {
 	humidity_config: {
         key: ['humidity_offset'],
         convertSet: async (entity, key, rawValue, meta) => {
-            const value = parseInt(rawValue, 10)
+			const endpoint = meta.device.getEndpoint(1);
+            const value = parseInt(rawValue, 10)*100
             const payloads = {
                 humidity_offset: ['msRelativeHumidity', {0x0210: {value, type: 0x29}}],
             };
-            await entity.write(payloads[key][0], payloads[key][1]);
+            await endpoint.write(payloads[key][0], payloads[key][1]);
             return {
                 state: {[key]: rawValue},
             };
@@ -86,6 +90,7 @@ const tzLocal = {
 	co2_gasstat_config: {
         key: ['high_gas', 'low_gas', 'enable_gas', 'invert_logic_gas'],
         convertSet: async (entity, key, rawValue, meta) => {
+			const endpoint = meta.device.getEndpoint(1);
             const lookup = {'OFF': 0x00, 'ON': 0x01};
             const value = lookup.hasOwnProperty(rawValue) ? lookup[rawValue] : parseInt(rawValue, 10);
             const payloads = {
@@ -94,7 +99,7 @@ const tzLocal = {
 				enable_gas: ['msCO2', {0x0220: {value, type: 0x10}}],
 				invert_logic_gas: ['msCO2', {0x0225: {value, type: 0x10}}],
             };
-            await entity.write(payloads[key][0], payloads[key][1]);
+            await endpoint.write(payloads[key][0], payloads[key][1]);
             return {
                 state: {[key]: rawValue},
             };
@@ -165,7 +170,7 @@ const fzLocal = {
         convert: (model, msg, publish, options, meta) => {
             const result = {};
             if (msg.data.hasOwnProperty(0x0210)) {
-                result.temperature_offset = parseFloat(msg.data[0x0210])/10.0;
+                result.temperature_offset = parseFloat(msg.data[0x0210])/100.0;
             }
             return result;
         },
@@ -176,7 +181,7 @@ const fzLocal = {
         convert: (model, msg, publish, options, meta) => {
             const result = {};
             if (msg.data.hasOwnProperty(0x0210)) {
-                result.humidity_offset = msg.data[0x0210];
+                result.humidity_offset = msg.data[0x0210]/100;
             }
             return result;
         },
@@ -214,9 +219,9 @@ const definition = {
 		onEvent: onEventSetLocalTime,
         configure: async (device, coordinatorEndpoint, logger) => {
             const endpoint = device.getEndpoint(1);
-			const endpoint2 = device.getEndpoint(2);
 			await reporting.bind(endpoint, coordinatorEndpoint, [
                 'genTime', 'msTemperatureMeasurement', 'msRelativeHumidity', 'msCO2']);
+			const endpoint2 = device.getEndpoint(2);
 		    await reporting.bind(endpoint2, coordinatorEndpoint, ['msIlluminanceMeasurement', 'msPressureMeasurement']);
         },
         exposes: [e.co2(), e.temperature(), e.humidity(), e.illuminance(), e.illuminance_lux(), e.pressure(),
