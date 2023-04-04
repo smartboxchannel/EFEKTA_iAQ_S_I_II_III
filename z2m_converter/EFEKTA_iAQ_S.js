@@ -77,7 +77,7 @@ const tzLocal = {
         key: ['humidity_offset'],
         convertSet: async (entity, key, rawValue, meta) => {
 			const endpoint = meta.device.getEndpoint(1);
-            const value = parseInt(rawValue, 10)*100
+            const value = parseInt(rawValue, 10)
             const payloads = {
                 humidity_offset: ['msRelativeHumidity', {0x0210: {value, type: 0x29}}],
             };
@@ -170,7 +170,7 @@ const fzLocal = {
         convert: (model, msg, publish, options, meta) => {
             const result = {};
             if (msg.data.hasOwnProperty(0x0210)) {
-                result.temperature_offset = parseFloat(msg.data[0x0210])/100.0;
+                result.temperature_offset = parseFloat(msg.data[0x0210])/10.0;
             }
             return result;
         },
@@ -181,7 +181,7 @@ const fzLocal = {
         convert: (model, msg, publish, options, meta) => {
             const result = {};
             if (msg.data.hasOwnProperty(0x0210)) {
-                result.humidity_offset = msg.data[0x0210]/100;
+                result.humidity_offset = msg.data[0x0210];
             }
             return result;
         },
