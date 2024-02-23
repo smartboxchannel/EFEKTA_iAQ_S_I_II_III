@@ -96,13 +96,6 @@ const tzLocal = {
 };
 
 const fzLocal = {
-	local_time: {
-        cluster: 'genTime',
-        type: ['attributeReport', 'readResponse'],
-        convert: (model, msg, publish, options, meta) => {
-            return {local_time: msg.data.localTime};
-        },
-    },
 	co2: {
         cluster: 'msCO2',
         type: ['attributeReport', 'readResponse'],
@@ -210,13 +203,12 @@ const definition = {
         model: 'EFEKTA_iAQ_S_II',
         vendor: 'Custom devices (DiY)',
         description: '[CO2 Mini Monitor with TFT Display, outdoor temperature, date and time.](http://efektalab.com/iAQ_S)',
-        fromZigbee: [fz.temperature, fz.humidity, fz.illuminance, fz.pressure, fzLocal.co2, fzLocal.co2_config,
-            fzLocal.temperaturef_config, fzLocal.humidity_config, fzLocal.local_time, fzLocal.co2_gasstat_config],
+        fromZigbee: [fz.temperature, fz.humidity, fz.illuminance, fz.pressure, fzLocal.co2, fzLocal.co2_config, fzLocal.temperaturef_config, fzLocal.humidity_config, fzLocal.co2_gasstat_config],
         toZigbee: [tz.factory_reset, tzLocal.co2_config, tzLocal.temperaturef_config, tzLocal.humidity_config, tzLocal.co2_gasstat_config],
 		meta: {multiEndpoint: true},
         configure: async (device, coordinatorEndpoint, logger) => {
             const endpoint = device.getEndpoint(1);
-			await reporting.bind(endpoint, coordinatorEndpoint, [msTemperatureMeasurement', 'msRelativeHumidity', 'msCO2']);
+			await reporting.bind(endpoint, coordinatorEndpoint, ['msTemperatureMeasurement', 'msRelativeHumidity', 'msCO2']);
 			const endpoint2 = device.getEndpoint(2);
 		    await reporting.bind(endpoint2, coordinatorEndpoint, ['msIlluminanceMeasurement', 'msPressureMeasurement', 'msTemperatureMeasurement', 'msRelativeHumidity']);
 			const payload1 = [{attribute: {ID: 0x0000, type: 0x39},
