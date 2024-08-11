@@ -10,6 +10,12 @@
 
 Продажа DIY Устройств - https://t.me/diydevmart
 
+## EFEKTA iAQ S I
+
+## EFEKTA iAQ S II
+
+## EFEKTA iAQ S III
+
 ![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/001.png) 
 
 ![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/02.png) 
