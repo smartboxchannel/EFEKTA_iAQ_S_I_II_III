@@ -5,3 +5,5 @@
 Продажа DIY Устройств - https://t.me/diydevmart
 
 Описание: http://efektalab.com/iAQ_S_III
+
+(ENG) https://telegra-ph.translate.goog/Datchik-monitoringa-uglekislogo-gaza-CO2-i-letuchih-organicheskih-soedinenij-VOC-EFEKTA-iAQ-S-III-08-11?_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=wapp
