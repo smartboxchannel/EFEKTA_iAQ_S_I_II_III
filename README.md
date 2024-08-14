@@ -12,7 +12,7 @@
 
 (EFEKTA iAQ S I ENG) 
 
-(EFEKTA iAQ S II ENG) 
+(EFEKTA iAQ S II ENG) https://telegra-ph.translate.goog/Datchik-monitoringa-uglekislogo-gaza-CO2-EFEKTA-iAQ-S-II-08-14?_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=wapp
 
 (EFEKTA iAQ S III ENG) https://telegra-ph.translate.goog/Datchik-monitoringa-uglekislogo-gaza-CO2-i-letuchih-organicheskih-soedinenij-VOC-EFEKTA-iAQ-S-III-08-11?_x_tr_sl=ru&_x_tr_tl=en&_x_tr_hl=ru&_x_tr_pto=wapp
 
