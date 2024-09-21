@@ -18,7 +18,7 @@
 
 ![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/001.png) 
 
-![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/02.png) 
+![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/002.png) 
 
 ![EFEKTA iAQ S III](https://raw.githubusercontent.com/smartboxchannel/EFEKTA_iAQ_S_I_II_III/main/Images/003.png) 
 
