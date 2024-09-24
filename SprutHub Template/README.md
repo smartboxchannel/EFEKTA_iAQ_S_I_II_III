@@ -2,7 +2,7 @@
 
 Описание (EFEKTA iAQ S I):
 
-Описание (EFEKTA iAQ S II):
+Описание (EFEKTA iAQ S II): http://efektalab.com/iAQ_S_II
 
 Описание (EFEKTA iAQ S III): http://efektalab.com/iAQ_S_III
 
