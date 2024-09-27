@@ -79,13 +79,13 @@
           "endpoint": 1,
           "cluster": "040D_CarbonDioxide",
           "attribute": "0402_Custom",
-          "zclDataType": "BOOLEAN"
+          "zclDataType": "UNSIGNED_8_BIT_INTEGER"
         },
 		{
           "endpoint": 1,
           "cluster": "040D_CarbonDioxide",
           "attribute": "0403_Custom",
-          "zclDataType": "BOOLEAN"
+          "zclDataType": "UNSIGNED_8_BIT_INTEGER"
         },
 		{
           "endpoint": 1,
@@ -333,7 +333,7 @@
       "link": {
         "endpoint": 1,
         "cluster": "040D_CarbonDioxide",
-        "attribute": "0405_Custom"
+        "attribute": "0402_Custom"
       },
       "name": "Установка начала работы ночного режима",
       "type": "Integer",
@@ -346,7 +346,7 @@
       "link": {
         "endpoint": 1,
         "cluster": "040D_CarbonDioxide",
-        "attribute": "0406_Custom"
+        "attribute": "0403_Custom"
       },
       "name": "Установка конца работы ночного режима",
       "type": "Integer",
