@@ -1,0 +1,368 @@
+{
+    "EFEKTA": [
+        {
+            "description": "CO2 and VOC Mini Monitor with TFT Display, outdoor temperature, date and time, direct control of external relays.",
+            "modelNames": [
+                "EFEKTA_iAQ_S_III"
+            ],
+            "exposes": [
+                "co2",
+				"voc",
+				"illuminance",
+                "temperature",
+                "humidity",
+                "temperatureOffset",
+                "humidityOffset",
+                "backlight",
+                "nightBacklight",
+                "nightBacklightOn",
+                "nightBacklightOff",
+                "longChart",
+                "longChart2",
+                "temperatureIntExt",
+                "setAltitude",
+                "co2AutoCalibration",
+				"co2CalibrationOnFreshAir",
+				"co2CalibrationManual",
+				"co2FactoryReset",
+				"co2Relay",
+				"co2RelayInvert",
+				"co2High",
+				"co2Low",
+				"vocRelay",
+				"vocRelayInvert",
+				"vocHigh",
+				"vocLow"
+            ],
+            "options": {
+				"customAttributes_1": {
+                    "temperatureOffset": {
+                        "type": "value",
+                        "clusterId": 1026,
+                        "attributeId": 528,
+                        "dataType": 41,
+                        "divider": 10,
+                        "action": true
+                    },
+                    "humidityOffset": {
+                        "type": "value",
+                        "clusterId": 1029,
+                        "attributeId": 528,
+                        "dataType": 41,
+                        "action": true
+                    }
+                },
+                "customAttributes_2": {
+                    "backlight": {
+                        "type": "bool",
+                        "clusterId": 1024,
+                        "attributeId": 515,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "nightBacklight": {
+                        "type": "bool",
+                        "clusterId": 1024,
+                        "attributeId": 1025,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "nightBacklightOn": {
+                        "type": "value",
+                        "clusterId": 1024,
+                        "attributeId": 1029,
+                        "dataType": 32,
+                        "action": true
+                    },
+                    "nightBacklightOff": {
+                        "type": "value",
+                        "clusterId": 1024,
+                        "attributeId": 1030,
+                        "dataType": 32,
+                        "action": true
+                    }
+                },
+                "customAttributes_3": {
+					"longChart": {
+                        "type": "enum",
+                        "clusterId": 1037,
+                        "attributeId": 516,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"longChart2": {
+                        "type": "enum",
+                        "clusterId": 1037,
+                        "attributeId": 580,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"temperatureIntExt": {
+                        "type": "enum",
+                        "clusterId": 1037,
+                        "attributeId": 648,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"setAltitude": {
+                        "type": "value",
+                        "clusterId": 1037,
+                        "attributeId": 517,
+                        "dataType": 33,
+                        "action": true
+                    },
+					"co2AutoCalibration": {
+                        "type": "bool",
+                        "clusterId": 1037,
+                        "attributeId": 1026,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "co2CalibrationOnFreshAir": {
+                        "type": "bool",
+                        "clusterId": 1037,
+                        "attributeId": 514,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"co2CalibrationManual": {
+                        "type": "value",
+                        "clusterId": 1037,
+                        "attributeId": 519,
+                        "dataType": 33,
+                        "action": true
+                    },
+					"co2FactoryReset": {
+                        "type": "bool",
+                        "clusterId": 1037,
+                        "attributeId": 518,
+                        "dataType": 16,
+                        "action": true
+                    },
+					"co2Relay": {
+                        "type": "bool",
+                        "clusterId": 1037,
+                        "attributeId": 544,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "co2RelayInvert": {
+                        "type": "bool",
+                        "clusterId": 1037,
+                        "attributeId": 549,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "co2High": {
+                        "type": "value",
+                        "clusterId": 1037,
+                        "attributeId": 545,
+                        "dataType": 33,
+                        "action": true
+                    },
+                    "co2Low": {
+                        "type": "value",
+                        "clusterId": 1037,
+                        "attributeId": 546,
+                        "dataType": 33,
+                        "action": true
+                    }
+                },
+				"customAttributes_4": {
+                    "vocRelay": {
+                        "type": "bool",
+                        "clusterId": 12,
+                        "attributeId": 544,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "vocRelayInvert": {
+                        "type": "bool",
+                        "clusterId": 12,
+                        "attributeId": 549,
+                        "dataType": 16,
+                        "action": true
+                    },
+                    "vocHigh": {
+                        "type": "value",
+                        "clusterId": 12,
+                        "attributeId": 545,
+                        "dataType": 33,
+                        "action": true
+                    },
+                    "vocLow": {
+                        "type": "value",
+                        "clusterId": 12,
+                        "attributeId": 546,
+                        "dataType": 33,
+                        "action": true
+                    }
+                },
+				"temperatureOffset": {
+					"type": "number",
+                    "min": -50,
+                    "max": 50,
+                    "step": 0.1,
+                    "unit": "°C"
+                },
+                "humidityOffset": {
+					"type": "number",
+                    "min": -50,
+                    "max": 50,
+                    "unit": "%"
+                },
+				"backlight": {
+                    "type": "toggle"
+                },
+				"nightBacklight": {
+                    "type": "toggle"
+                },
+				"nightBacklightOn": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 23,
+                    "unit": "h"
+                },
+                "nightBacklightOff": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 23,
+                    "unit": "h"
+                },
+				"longChart": {
+                    "type": "select",
+                    "enum": {
+                        "0": "1H",
+                        "1": "24H"
+                    }
+                },
+				"longChart2": {
+                    "type": "select",
+                    "enum": {
+                        "0": "1H",
+                        "1": "24H"
+                    }
+                },
+				"temperatureIntExt": {
+                    "type": "select",
+                    "enum": {
+                        "0": "INTERNAL",
+                        "1": "EXTERNAL"
+                    }
+                },
+				"setAltitude": {
+					"type": "number",
+                    "min": 0,
+                    "max": 3000,
+                    "unit": "m."
+                },
+				"co2AutoCalibration": {
+                    "type": "toggle"
+                },
+				"co2CalibrationOnFreshAir": {
+                    "type": "toggle"
+                },
+				"co2CalibrationManual": {
+                    "type": "number",
+                    "min": 0,
+                    "max": 5000,
+                    "unit": "ppm"
+                },
+				"co2FactoryReset": {
+                    "type": "toggle"
+                },
+				"co2Relay": {
+                    "type": "toggle"
+                },
+				"co2RelayInvert": {
+                    "type": "toggle"
+                },
+				"co2High": {
+                    "min": 400,
+                    "max": 5000
+                },
+                "co2Low": {
+                    "min": 400,
+                    "max": 5000
+                },
+				"vocRelay": {
+                    "type": "toggle"
+                },
+				"vocRelayInvert": {
+                    "type": "toggle"
+                },
+				"vocHigh": {
+                    "min": 0,
+                    "max": 500
+                },
+                "vocLow": {
+                    "min": 0,
+                    "max": 500
+                }
+            }
+        },
+        {
+            "modelNames": [
+                "EFEKTA_iAQ_S_III"
+            ],
+            "properties": [
+                "temperature",
+                "humidity"
+            ],
+            "bindings": [
+                "temperature",
+                "humidity"
+            ],
+            "reportings": [
+                "temperature",
+                "humidity"
+            ],
+            "endpointId": 1
+        },
+        {
+            "modelNames": [
+                "EFEKTA_iAQ_S_III"
+            ],
+            "properties": [
+                "illuminance"
+            ],
+            "bindings": [
+                "illuminance"
+            ],
+            "reportings": [
+                "illuminance"
+            ],
+            "endpointId": 2
+        },
+		{
+            "modelNames": [
+                "EFEKTA_iAQ_S_III"
+            ],
+            "properties": [
+                "co2"
+            ],
+            "bindings": [
+                "co2"
+            ],
+            "reportings": [
+                "co2"
+            ],
+            "endpointId": 3
+        },
+		{
+            "modelNames": [
+                "EFEKTA_iAQ_S_III"
+            ],
+            "properties": [
+                "analogInput"
+            ],
+            "bindings": [
+                "analogInput"
+            ],
+            "reportings": [
+                "analogInput"
+            ],
+            "endpointId": 4
+        }
+    ]
+}
